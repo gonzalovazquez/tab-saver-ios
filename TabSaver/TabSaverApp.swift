@@ -1,17 +1,20 @@
-//
-//  TabSaverApp.swift
-//  TabSaver
-//
-//  Created by Gonzalo Vazquez on 2026-02-14.
-//
-
 import SwiftUI
 
 @main
 struct TabSaverApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Tabs", systemImage: "list.bullet")
+                    }
+                
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+            }
         }
     }
 }

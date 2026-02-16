@@ -6,9 +6,52 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C83F2FF12F414C2E00B25C8C /* TabManagerShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C83F2FE72F414C2E00B25C8C /* TabManagerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C8E91E762F4184FF009E4C79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E91E752F4184FF009E4C79 /* Foundation.framework */; };
+		C8E91E782F41850A009E4C79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E91E772F41850A009E4C79 /* UIKit.framework */; platformFilters = (ios, xros, ); };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C83F2FEF2F414C2E00B25C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C83F2FBD2F414AAD00B25C8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C83F2FE62F414C2E00B25C8C;
+			remoteInfo = TabManagerShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C83F2FF62F414C2E00B25C8C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C83F2FF12F414C2E00B25C8C /* TabManagerShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C83F2FC52F414AAD00B25C8C /* TabSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83F2FE72F414C2E00B25C8C /* TabManagerShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TabManagerShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E91E752F4184FF009E4C79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C8E91E772F41850A009E4C79 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C83F2FF22F414C2E00B25C8C /* Exceptions for "TabManagerShare" folder in "TabManagerShare" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C83F2FE62F414C2E00B25C8C /* TabManagerShare */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C83F2FC72F414AAD00B25C8C /* TabSaver */ = {
@@ -16,10 +59,27 @@
 			path = TabSaver;
 			sourceTree = "<group>";
 		};
+		C83F2FE82F414C2E00B25C8C /* TabManagerShare */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C83F2FF22F414C2E00B25C8C /* Exceptions for "TabManagerShare" folder in "TabManagerShare" target */,
+			);
+			path = TabManagerShare;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C83F2FC22F414AAD00B25C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8E91E782F41850A009E4C79 /* UIKit.framework in Frameworks */,
+				C8E91E762F4184FF009E4C79 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C83F2FE42F414C2E00B25C8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				C83F2FC72F414AAD00B25C8C /* TabSaver */,
+				C83F2FE82F414C2E00B25C8C /* TabManagerShare */,
+				C8E91E742F4184FF009E4C79 /* Frameworks */,
 				C83F2FC62F414AAD00B25C8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				C83F2FC52F414AAD00B25C8C /* TabSaver.app */,
+				C83F2FE72F414C2E00B25C8C /* TabManagerShare.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C8E91E742F4184FF009E4C79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8E91E772F41850A009E4C79 /* UIKit.framework */,
+				C8E91E752F4184FF009E4C79 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				C83F2FC12F414AAD00B25C8C /* Sources */,
 				C83F2FC22F414AAD00B25C8C /* Frameworks */,
 				C83F2FC32F414AAD00B25C8C /* Resources */,
+				C83F2FF62F414C2E00B25C8C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C83F2FF02F414C2E00B25C8C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C83F2FC72F414AAD00B25C8C /* TabSaver */,
@@ -69,6 +143,28 @@
 			productName = TabSaver;
 			productReference = C83F2FC52F414AAD00B25C8C /* TabSaver.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C83F2FE62F414C2E00B25C8C /* TabManagerShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C83F2FF32F414C2E00B25C8C /* Build configuration list for PBXNativeTarget "TabManagerShare" */;
+			buildPhases = (
+				C83F2FE32F414C2E00B25C8C /* Sources */,
+				C83F2FE42F414C2E00B25C8C /* Frameworks */,
+				C83F2FE52F414C2E00B25C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C83F2FE82F414C2E00B25C8C /* TabManagerShare */,
+			);
+			name = TabManagerShare;
+			packageProductDependencies = (
+			);
+			productName = TabManagerShare;
+			productReference = C83F2FE72F414C2E00B25C8C /* TabManagerShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					C83F2FC42F414AAD00B25C8C = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C83F2FE62F414C2E00B25C8C = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				C83F2FC42F414AAD00B25C8C /* TabSaver */,
+				C83F2FE62F414C2E00B25C8C /* TabManagerShare */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C83F2FC32F414AAD00B25C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C83F2FE52F414C2E00B25C8C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C83F2FE32F414C2E00B25C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C83F2FF02F414C2E00B25C8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C83F2FE62F414C2E00B25C8C /* TabManagerShare */;
+			targetProxy = C83F2FEF2F414C2E00B25C8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C83F2FCE2F414AAE00B25C8C /* Debug */ = {
@@ -246,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TabSaver/TabSaver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52B5SQ9FMP;
@@ -290,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TabSaver/TabSaver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52B5SQ9FMP;
@@ -329,6 +453,69 @@
 			};
 			name = Release;
 		};
+		C83F2FF42F414C2E00B25C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TabManagerShare/TabManagerShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52B5SQ9FMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TabManagerShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TabManagerShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmakestwo.TabSaver.TabManagerShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C83F2FF52F414C2E00B25C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TabManagerShare/TabManagerShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52B5SQ9FMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TabManagerShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TabManagerShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmakestwo.TabSaver.TabManagerShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +533,15 @@
 			buildConfigurations = (
 				C83F2FD12F414AAE00B25C8C /* Debug */,
 				C83F2FD22F414AAE00B25C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C83F2FF32F414C2E00B25C8C /* Build configuration list for PBXNativeTarget "TabManagerShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C83F2FF42F414C2E00B25C8C /* Debug */,
+				C83F2FF52F414C2E00B25C8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
