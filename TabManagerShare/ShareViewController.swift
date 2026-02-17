@@ -10,7 +10,7 @@ class ShareViewController: UIViewController {
     // MARK: - Config
 
     private let configKey = "TabManagerAPIURL"
-    private let defaultAPIURL = "http://192.168.1.100:5000"
+    private let defaultAPIURL = "https://192.168.1.100:5000"
     private let appGroupID = "group.com.usmakestwo.TabSaver"
 
     // MARK: - State
@@ -354,7 +354,7 @@ class ShareViewController: UIViewController {
         URLSession.shared.dataTask(with: request) { [weak self] data, _, _ in
             guard let data = data,
                   let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let tabId = json["id"] as? Int,
+                  let tabId = json["id"] as? String,
                   let tag = tag, !tag.isEmpty else {
                 self?.completeExtension()
                 return
@@ -363,7 +363,7 @@ class ShareViewController: UIViewController {
         }.resume()
     }
 
-    private func addTag(to tabId: Int, tag: String) {
+    private func addTag(to tabId: String, tag: String) {
         guard let endpoint = URL(string: "\(apiURL)/api/tabs/\(tabId)/tags") else {
             completeExtension()
             return
@@ -389,6 +389,6 @@ class ShareViewController: UIViewController {
 // MARK: - Models
 
 private struct RemoteTag: Decodable {
-    let id: Int
+    let id: String
     let name: String
 }

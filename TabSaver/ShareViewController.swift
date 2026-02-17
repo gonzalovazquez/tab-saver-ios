@@ -8,7 +8,7 @@ import UIKit
 class ShareViewController: UIViewController {
     
     private let configKey = "TabManagerAPIURL"
-    private let defaultAPIURL = "http://192.168.1.100:5000"
+    private let defaultAPIURL = "https://192.168.1.100:5000"
     
     override func viewDidLoad() {
         super.viewDidLoad()

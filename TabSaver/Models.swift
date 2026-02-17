@@ -11,7 +11,7 @@ import Combine
 // MARK: - Models
 
 struct Tab: Codable, Identifiable {
-    let id: Int
+    let id: String
     let url: String
     let title: String
     let notes: String?
@@ -20,12 +20,12 @@ struct Tab: Codable, Identifiable {
 
     enum CodingKeys: String, CodingKey {
         case id, url, title, notes, tags
-        case savedAt = "saved_at"
+        case savedAt = "created_at"
     }
 }
 
 struct TagResponse: Codable {
-    let id: Int
+    let id: String
     let name: String
 }
 
@@ -36,7 +36,7 @@ class TabManagerViewModel: ObservableObject {
     @Published var tags: [String] = []
     @Published var statusMessage = ""
     
-    private var apiURL: String = "http://192.168.1.100:5000"
+    private var apiURL: String = "https://192.168.1.100:5000"
     private let configKey = "TabManagerAPIURL"
     private let appGroupDefaults = UserDefaults(suiteName: "group.com.usmakestwo.TabSaver") ?? .standard
 
@@ -122,7 +122,7 @@ class TabManagerViewModel: ObservableObject {
             
             guard let data = data,
                   let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let tabId = json["id"] as? Int else {
+                  let tabId = json["id"] as? String else {
                 DispatchQueue.main.async {
                     completion(false)
                 }
@@ -166,7 +166,7 @@ class TabManagerViewModel: ObservableObject {
         }.resume()
     }
 
-    func fetchTab(id: Int, completion: @escaping (Tab?) -> Void) {
+    func fetchTab(id: String, completion: @escaping (Tab?) -> Void) {
         let urlString = "\(apiURL)/api/tabs/\(id)"
         guard let url = URL(string: urlString) else {
             completion(nil)
@@ -184,7 +184,7 @@ class TabManagerViewModel: ObservableObject {
         }.resume()
     }
 
-    func addTag(to tabId: Int, tag: String, completion: @escaping (Bool) -> Void) {
+    func addTag(to tabId: String, tag: String, completion: @escaping (Bool) -> Void) {
         let urlString = "\(apiURL)/api/tabs/\(tabId)/tags"
         guard let endpoint = URL(string: urlString) else {
             completion(false)
@@ -203,7 +203,7 @@ class TabManagerViewModel: ObservableObject {
         }.resume()
     }
     
-    func deleteTab(id: Int, completion: @escaping (Bool) -> Void) {
+    func deleteTab(id: String, completion: @escaping (Bool) -> Void) {
         let urlString = "\(apiURL)/api/tabs/\(id)"
         guard let endpoint = URL(string: urlString) else {
             completion(false)
