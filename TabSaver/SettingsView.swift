@@ -18,7 +18,7 @@ struct SettingsView: View {
                 Section("API Configuration") {
                     TextField("Host", text: $nasIP, prompt: Text("example.execute-api.us-east-1.amazonaws.com"))
                         .autocorrectionDisabled()
-                        .autocapitalization(.none)
+                        .textInputAutocapitalization(.never)
                         .keyboardType(.URL)
 
                     Button(action: saveSettings) {
